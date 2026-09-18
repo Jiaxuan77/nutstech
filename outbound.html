@@ -4,8 +4,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
 <meta name="description" content="Nuts Tech curates executive delegations, cross-border programmes and partnerships connecting global leaders with China’s innovation ecosystem." />
-<title>Outbound Programmes — Nuts Tech</title>
+<title>Partnerships — Nuts Tech</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -653,8 +654,20 @@ footer {
 </style>
 <link rel="stylesheet" href="typography.css">
 <link rel="stylesheet" href="site-header.css">
-<link rel="stylesheet" href="scroll-reveal.css">
-<script src="scroll-reveal.js" defer></script>
+<style>
+  .partner-section { width: min(980px, 100%); margin: 3.5rem 0 4.25rem; }
+  .partner-section h2 { margin: 0 0 1.6rem; font-size: clamp(1.75rem, 1.25rem + 1.6vw, 2.75rem); font-weight: 600; line-height: 1.18; letter-spacing: -.03em; }
+  .partner-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 5vw, 5rem); }
+  .partner-card { border-top: 1px solid var(--line); padding-top: 1.5rem; }
+  .partner-card .partner-type { margin: 0 0 .65rem; font-size: .8125rem; font-weight: 600; line-height: 1.5; letter-spacing: .12em; text-transform: uppercase; }
+  .partner-card h3 { margin: 0 0 1rem; font-size: clamp(1.35rem, 1.15rem + .6vw, 1.7rem); font-weight: 600; line-height: 1.25; letter-spacing: -.025em; }
+  .partner-card p:last-child { margin: 0; max-width: 65ch; font-size: var(--type-body); line-height: 1.65; }
+  .partner-card strong { font-weight: 600; }
+  @media (max-width: 820px) {
+    .partner-section { margin: 2.75rem 0 3.5rem; }
+    .partner-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
 </head>
 <body>
 <div class="site-chrome">
@@ -663,31 +676,36 @@ footer {
 </div>
 <a class="home-back" href="index.html" aria-label="Back to home" title="Back to home">←</a>
 <main>
-<section class="page" data-scroll-reveal>
-  <p class="section-label">Outbound Programmes</p>
-  <h1 class="page-title">Explore new markets.<br>Build global connections.</h1>
-  <p class="landing-intro">For leaders and organisations exploring opportunities beyond China. Meet companies, gain local insight and connect with potential partners through curated overseas visits and focused discussions.</p>
-  <div class="programme-list">
-    <article class="programme-row">
-      <div class="programme-head">
-        <p class="programme-name">Singapore - Malaysia Asia AI Computing Commodity</p>
-        <p class="programme-meta">5 days · Groups of 8-16</p>
-      </div>
-      <p class="programme-desc">Combines site visits with a deal-structuring masterclass and closed roundtable, promising a realistic read on gigawatt capacity, cost stacks, and delivery risk rather than a sanitized pitch.</p>
-      <p class="programme-desc departure-note"><strong><em>Departures from October 2027.</em></strong></p>
-    </article>
-
-    <article class="programme-row">
-      <div class="programme-head">
-        <p class="programme-name">Brazil</p>
-        <p class="programme-meta">8 days · Groups of 8-20</p>
-      </div>
-      <p class="programme-desc">Meet Brazilian companies and industry leaders, gain first-hand insight into the local market, and explore opportunities for cross-border partnerships.</p>
-      <p class="programme-desc departure-note"><strong><em>Departures from April 2027.</em></strong></p>
-    </article>
-
+<section class="page">
+  <p class="section-label">Partnerships</p>
+  <h1 class="page-title">From introductions to execution.</h1>
+  <p class="landing-intro">Commercial support for organisations that need more than a first meeting — from sourcing and market access to structured cross-border partnerships.</p>
+  <section class="partner-section" aria-labelledby="partner-heading">
+    <h2 id="partner-heading">Our partnerships</h2>
+    <div class="partner-grid">
+      <article class="partner-card">
+        <p class="partner-type">Research affiliation</p>
+        <h3>Beijing FIRST Research Institute</h3>
+        <p>Through our affiliation with the <strong>Beijing Frontier Institute of Regulation and Supervision Technology (FIRST)</strong>, participants gain exposure to research and industry perspectives at the intersection of <strong>finance, technology, regulation, and innovation</strong>. FIRST brings together academic, industry, regulatory, and technology stakeholders, providing a valuable platform for understanding how emerging technologies are shaping financial systems and the wider digital economy.</p>
+      </article>
+      <article class="partner-card">
+        <p class="partner-type">Sales channel partnership</p>
+        <h3>Unitree Robotics</h3>
+        <p>Our <strong>sales channel partnership with Unitree Robotics</strong> strengthens our connection to China’s fast-growing robotics ecosystem. Through this collaboration, we support the market development and commercial outreach of Unitree’s robotics solutions, while providing our programmes with closer exposure to the business, application, and commercialisation of advanced robotics technologies.</p>
+      </article>
+    </div>
+  </section>
+  <div class="split">
+    <div class="split-card"><h3>Sourcing &amp; commercial partnerships</h3><p>Supplier discovery, QC visits, licensing and JV conversations, supported by bilingual coordination.</p></div>
+    <div class="split-card"><h3>Finance &amp; market access</h3><p>Cross-border payment, development-finance and institutional introductions where relevant to the mandate.</p></div>
   </div>
-  <p class="pricing">Pricing on request. Hosts confirmed per cohort. Flights, visas and insurance excluded.</p>
+  <div class="subsection">
+    <h2>Built around the transaction, partnership or operating question.</h2>
+    <div class="split">
+      <div class="split-card"><h3>Before the meeting</h3><p>Target definition, counterpart research and bilingual preparation so conversations begin with context.</p></div>
+      <div class="split-card"><h3>After the meeting</h3><p>Follow-through on commercial questions, next steps and local coordination after the delegation ends.</p></div>
+    </div>
+  </div>
 </section>
 </main>
 <footer><span>© 2026 Nuts Tech</span><span>Connecting the world to China’s frontier</span></footer>
