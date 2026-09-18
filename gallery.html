@@ -651,6 +651,7 @@ footer {
 
 </style>
 <link rel="stylesheet" href="typography.css">
+<link rel="stylesheet" href="site-nav.css">
 <style>
   .gallery-page { min-height: 100svh; }
   .gallery-intro { max-width: 65ch; margin-bottom: 2.75rem; }
@@ -692,7 +693,25 @@ footer {
 <body>
 <div class="site-chrome">
   <a class="logo" href="index.html" aria-label="Nuts Tech home"><img src="nuts-tech-logo.png" alt="Nuts Tech logo"></a>
-  <a class="top-link" href="contact.html">CONTACT</a>
+  <nav class="global-nav" aria-label="Main navigation">
+    <div class="desktop-menu">
+      <a href="index.html">Home</a>
+      <a href="inbound.html">Inbound</a>
+      <a href="outbound.html">Outbound</a>
+      <a href="gallery.html" aria-current="page">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <details class="mobile-menu">
+      <summary>Menu</summary>
+      <div class="mobile-menu-panel">
+        <a href="index.html" aria-label="Home">Home</a>
+        <a href="inbound.html" aria-label="Inbound">Inbound</a>
+        <a href="outbound.html" aria-label="Outbound">Outbound</a>
+        <a href="gallery.html" aria-label="Gallery" aria-current="page">Gallery</a>
+        <a href="contact.html" aria-label="Contact">Contact</a>
+      </div>
+    </details>
+  </nav>
 </div>
 <a class="home-back" href="index.html" aria-label="Back to home" title="Back to home">←</a>
 <main>
