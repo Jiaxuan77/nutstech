@@ -686,6 +686,7 @@ footer {
 }
 
 </style>
+<link rel="stylesheet" href="typography.css">
 </head>
 <body>
 <div class="site-chrome">
@@ -700,9 +701,10 @@ footer {
     <p class="contact-intro">Share the essentials and we’ll come back with the most relevant programme, delegation format or partnership route. We typically reply within 48 hours.</p>
   </div>
 
-  <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thanks.html">
-    <input type="hidden" name="form-name" value="contact">
-    <p class="hp-field"><label>Don’t fill this out: <input name="bot-field"></label></p>
+  <form class="contact-form" id="contact-form" name="contact" method="POST" action="https://formsubmit.co/nuts_tech@outlook.com">
+    <input type="hidden" name="_subject" value="New Nuts Tech website enquiry">
+    <input type="hidden" name="_template" value="table">
+    
     <div class="contact-form-grid">
       <div class="field full"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
       <div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
@@ -740,51 +742,23 @@ footer {
     <p class="contact-meta"><span>Programme enquiries</span><span>Partnerships</span><span>Bespoke delegations</span></p>
     <a href="mailto:nuts_tech@outlook.com">nuts_tech@outlook.com</a><br>
     <span>WeChat: nuts-tech</span>
-    <p class="cities">Hangzhou · Shanghai · Beijing</p>
+    <p class="cities">Hangzhou · Shanghai · Beijing · Shenzhen</p>
   </div>
 </section>
 </main>
 <script>
 (function () {
   const form = document.getElementById('contact-form');
-  const status = document.getElementById('form-status');
-  if (!form || !status) return;
-
-  form.addEventListener('submit', async function (event) {
-    event.preventDefault();
-
-    if (window.location.protocol === 'file:') {
-      status.className = 'form-status error';
-      status.innerHTML = 'Form submission activates after deployment. For this local preview, email <a href="mailto:nuts_tech@outlook.com">nuts_tech@outlook.com</a>.';
-      return;
-    }
-
-    const button = form.querySelector('button[type="submit"]');
-    const oldText = button.textContent;
-    button.disabled = true;
-    button.textContent = 'Sending…';
-    status.textContent = '';
-    status.className = 'form-status';
-
-    try {
-      const body = new URLSearchParams(new FormData(form)).toString();
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body
-      });
-      if (!response.ok) throw new Error('Submission failed');
-      form.reset();
-      status.className = 'form-status success';
-      status.textContent = 'Received — we’ll reply within 48 hours.';
-    } catch (error) {
-      status.className = 'form-status error';
-      status.innerHTML = 'The form could not be sent. Please email <a href="mailto:nuts_tech@outlook.com">nuts_tech@outlook.com</a>.';
-    } finally {
-      button.disabled = false;
-      button.textContent = oldText;
-    }
-  });
+  // Keep GitHub Pages repository paths when returning from FormSubmit.
+  // Local previews use the service's default confirmation page instead.
+  if (form && location.protocol === 'https:' &&
+      !['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)) {
+    const next = document.createElement('input');
+    next.type = 'hidden';
+    next.name = '_next';
+    next.value = new URL('thanks.html', location.href).href;
+    form.appendChild(next);
+  }
 })();
 </script>
 </body>

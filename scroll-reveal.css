@@ -1,0 +1,15 @@
+.scroll-reveal {
+  transition: opacity 650ms ease var(--reveal-delay, 0ms),
+    transform 650ms cubic-bezier(.22, 1, .36, 1) var(--reveal-delay, 0ms);
+}
+.reveal-pending {
+  opacity: 0;
+  transform: translateY(18px);
+}
+@media (prefers-reduced-motion: reduce), print {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
