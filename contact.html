@@ -391,6 +391,22 @@ textarea::placeholder { color: rgba(23,43,146,.48); }
 }
 .form-status.success { color: var(--blue); }
 .form-status.error { color: #7b1f1f; }
+.privacy-note {
+  max-width: 100%;
+  margin: .85rem 0 0 auto;
+  text-align: right;
+  font-size: .72rem;
+  line-height: 1.55;
+  color: rgba(23,43,146,.78);
+}
+.privacy-note a {
+  color: var(--blue);
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.privacy-note a:hover { color: var(--accent); }
 .hp-field { position: absolute !important; left: -9999px !important; }
 .contact-bottom {
   margin-top: auto;
@@ -489,6 +505,7 @@ footer {
   .form-guidance { grid-column: auto; font-size: .66rem; }
   .form-footer { justify-content: flex-end; margin-top: .7rem; }
   .submit-btn { font-size: .66rem; }
+  .privacy-note { margin-top: .75rem; font-size: .68rem; }
   .contact-bottom { padding-top: 2.7rem; font-size: .7rem; }
   .contact-bottom .contact-meta { margin-bottom: 1rem; }
   .contact-bottom .cities { margin-top: 1.45rem; }
@@ -697,6 +714,11 @@ footer {
 <a class="home-back" href="index.html" aria-label="Back to home" title="Back to home">←</a>
 <main>
 <section class="page contact-page">
+  <nav class="page-nav" aria-label="Main programme pages">
+    <a href="inbound.html">Inbound Programmes</a>
+    <a href="outbound.html">Outbound Programmes</a>
+    <a href="gallery.html">Gallery</a>
+  </nav>
   <div class="contact-title-wrap">
     <h1 class="page-title">Tell us your market and<br>what you want to achieve</h1>
     <p class="contact-intro">Share the essentials and we’ll come back with the most relevant programme, delegation format or partnership route. We typically reply within 48 hours.</p>
@@ -737,6 +759,7 @@ footer {
       <button class="submit-btn" type="submit">Send enquiry</button>
     </div>
     <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+    <p class="privacy-note">We use the information you submit to respond to your enquiry. See our <a href="privacy.html">full privacy notice</a>.</p>
   </form>
 
   <div class="contact-bottom">
@@ -764,3 +787,4 @@ footer {
 </script>
 </body>
 </html>
+
