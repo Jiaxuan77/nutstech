@@ -1,0 +1,97 @@
+/* Shared header sizing. Loaded after each page's legacy header styles. */
+.site-chrome {
+  height: 124px !important;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem) !important;
+  gap: 2rem;
+}
+
+.site-chrome .logo {
+  width: 104px;
+  height: 104px !important;
+  overflow: visible;
+  flex: none;
+}
+
+.site-chrome .logo img {
+  width: 104px !important;
+  height: 104px !important;
+  object-fit: contain !important;
+  transform: none;
+}
+
+.site-chrome .top-link {
+  display: inline-flex !important;
+  align-items: center;
+  height: 100% !important;
+  margin-left: auto !important;
+  color: var(--blue);
+  font-size: .875rem !important;
+  font-weight: 600;
+  letter-spacing: .08em !important;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color .18s ease;
+}
+
+.site-chrome .top-link:hover { color: #0b65b1; }
+
+/* Keep the shared menu close to the header on every page. */
+.page,
+.home-page .hero {
+  padding-top: 1.25rem !important;
+}
+
+.page-nav,
+.home-page .hero-nav {
+  width: 100%;
+  margin: 0 0 clamp(2.5rem, 5vw, 4.5rem) !important;
+  padding: 0 !important;
+  align-self: flex-end !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: clamp(1.25rem, 2.5vw, 2.5rem) !important;
+  white-space: nowrap;
+}
+
+.page-nav a[aria-current="page"] { color: var(--accent); }
+
+@media (max-width: 900px) {
+  .site-chrome {
+    height: 92px !important;
+    padding: 0 1.25rem 0 .8rem !important;
+  }
+
+  .site-chrome .logo {
+    width: 76px;
+    height: 76px !important;
+  }
+
+  .site-chrome .logo img {
+    width: 76px !important;
+    height: 76px !important;
+  }
+
+  .site-chrome .top-link { font-size: .82rem !important; }
+
+  .page-nav,
+  .home-page .hero-nav {
+    margin-bottom: 2.25rem !important;
+    gap: .8rem !important;
+    font-size: .72rem !important;
+  }
+
+  .page,
+  .home-page .hero {
+    padding-top: .75rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .page-nav,
+  .home-page .hero-nav {
+    gap: .45rem !important;
+    font-size: .64rem !important;
+  }
+}
