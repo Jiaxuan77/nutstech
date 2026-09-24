@@ -1,0 +1,161 @@
+.layout-preview .gallery-intro {
+  margin-bottom: 1.5rem;
+}
+
+.preview-switcher {
+  width: min(980px, 100%);
+  margin: 0 0 3.5rem;
+  padding: .7rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem 1.4rem;
+  border-top: 1px solid var(--soft-line);
+  border-bottom: 1px solid var(--soft-line);
+  font-size: .76rem;
+  line-height: 1.3;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.preview-switcher a {
+  text-decoration: none;
+}
+
+.preview-switcher a:hover,
+.preview-switcher a[aria-current="page"] {
+  color: var(--accent);
+}
+
+.layout-preview .gallery-item {
+  overflow: hidden;
+}
+
+.layout-preview .gallery-item img {
+  transition: transform .45s ease;
+}
+
+.layout-preview .gallery-item:hover img {
+  transform: scale(1.012);
+}
+
+/* Option 1: an editorial collage with a strong opening image. */
+.layout-editorial .gallery-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(2.25rem, 5vw, 4.75rem) clamp(.75rem, 1.6vw, 1.4rem);
+}
+
+.layout-editorial .gallery-item:nth-child(1) {
+  grid-column: 1 / -1;
+}
+
+.layout-editorial .gallery-item:nth-child(2) {
+  grid-column: 1 / span 5;
+  margin-top: 0;
+}
+
+.layout-editorial .gallery-item:nth-child(3) {
+  grid-column: 7 / -1;
+  margin-top: 5rem;
+}
+
+.layout-editorial .gallery-item:nth-child(4) {
+  grid-column: 2 / span 9;
+  margin-top: 0;
+}
+
+.layout-editorial .gallery-item:first-child img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Option 2: a calm, immersive scroll with oversized photographs. */
+.layout-story .gallery-grid {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3.5rem, 8vw, 7.5rem);
+}
+
+.layout-story .gallery-item:nth-child(n) {
+  width: min(860px, 100%);
+  margin: 0;
+}
+
+.layout-story .gallery-item:nth-child(even) {
+  width: min(760px, 86%);
+  align-self: flex-end;
+}
+
+.layout-story .gallery-item img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.layout-story .gallery-item figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: .92rem;
+}
+
+.layout-story .gallery-item figcaption::before {
+  color: var(--accent);
+  font-size: .72rem;
+  letter-spacing: .12em;
+}
+
+.layout-story .gallery-item:nth-child(1) figcaption::before { content: "01"; }
+.layout-story .gallery-item:nth-child(2) figcaption::before { content: "02"; }
+.layout-story .gallery-item:nth-child(3) figcaption::before { content: "03"; }
+.layout-story .gallery-item:nth-child(4) figcaption::before { content: "04"; }
+
+/* Option 3: a simple, consistent two-column grid. */
+.layout-grid .gallery-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem 1.5rem;
+}
+
+.layout-grid .gallery-item:nth-child(n) {
+  grid-column: auto;
+  margin: 0;
+}
+
+.layout-grid .gallery-item img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .preview-switcher {
+    margin-bottom: 2.5rem;
+    gap: .7rem 1.1rem;
+  }
+
+  .layout-preview .gallery-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .layout-preview .gallery-item:nth-child(n) {
+    width: 100%;
+    margin: 0;
+    align-self: stretch;
+  }
+
+  .layout-preview .gallery-item img {
+    width: 100%;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 520px) {
+  .preview-switcher {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .layout-preview .gallery-grid {
+    gap: 2rem;
+  }
+}
