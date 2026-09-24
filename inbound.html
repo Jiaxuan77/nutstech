@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -105,6 +106,14 @@ button, input, textarea, select { font: inherit; }
 .page-title {
   max-width: 680px;
   font-size: clamp(2.55rem, 4.25vw, 4.45rem);
+}
+.programme-page-title {
+  width: max-content;
+  max-width: 100%;
+}
+.programme-page-title .title-line {
+  display: block;
+  white-space: nowrap;
 }
 .hero-copy {
   margin-top: 3.05rem;
@@ -436,6 +445,8 @@ footer {
   .section-label { letter-spacing: .19em; margin-top: 2.2rem; }
   .hero h1,
   .page-title { max-width: 95%; }
+  .programme-page-title { width: auto; }
+  .programme-page-title .title-line { white-space: normal; }
   .hero-copy { margin-top: 2.25rem; }
   .hero-nav,
   .page-nav { font-size: .98rem; padding-top: 2.8rem; gap: .62rem; }
@@ -651,7 +662,7 @@ footer {
 
 </style>
 <link rel="stylesheet" href="typography.css">
-<link rel="stylesheet" href="site-header.css">
+<link rel="stylesheet" href="site-header.css?v=4">
 <link rel="stylesheet" href="scroll-reveal.css">
 <script src="scroll-reveal.js" defer></script>
 </head>
@@ -666,10 +677,11 @@ footer {
   <nav class="page-nav" aria-label="Main programme pages">
     <a href="inbound.html" aria-current="page">Inbound Programmes</a>
     <a href="outbound.html">Outbound Programmes</a>
+    <a href="partnerships.html">Partnerships</a>
     <a href="gallery.html">Gallery</a>
   </nav>
   <p class="section-label">Inbound Programmes</p>
-  <h1 class="page-title">China programmes built around direct access.</h1>
+  <h1 class="page-title programme-page-title"><span class="title-line">China programmes built</span><span class="title-line">around direct access.</span></h1>
   <p class="landing-intro">For overseas leaders and organisations entering China to learn, source, partner or explore investment opportunities.</p>
   <div class="programme-list">
     <article class="programme-row">
@@ -678,12 +690,8 @@ footer {
     </article>
     <article class="programme-row">
       <div class="programme-head"><p class="programme-name">Shanghai - Hangzhou - Beijing</p><p class="programme-meta">8 days · Groups of 8-20</p></div>
-      <p class="programme-desc">Innovation keynote, four corporate visits (AI, robotics, mobility, finance), Beijing policy briefing, closing strategy memo.</p>
+      <p class="programme-desc">An immersive exploration of innovation and Chinese culture, with company visits spanning AI, robotics, mobility, and finance.</p>
       <p class="programme-desc departure-note"><strong><em>Departures from Spring 2027.</em></strong></p>
-    </article>
-    <article class="programme-row">
-      <div class="programme-head"><p class="programme-name">Bespoke</p><p class="programme-meta">Sourcing · Partnership · Finance</p></div>
-      <p class="programme-desc">Supplier visits with QC, JV / licensing structuring, cross-border payment and development-finance introductions.</p>
     </article>
   </div>
   <p class="pricing">Pricing on request. Hosts confirmed per cohort. Flights, visas and insurance excluded.</p>
@@ -693,4 +701,3 @@ footer {
 
 </body>
 </html>
-
