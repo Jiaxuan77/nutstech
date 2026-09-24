@@ -653,19 +653,55 @@ footer {
 
 </style>
 <link rel="stylesheet" href="typography.css">
-<link rel="stylesheet" href="site-header.css">
+<link rel="stylesheet" href="site-header.css?v=4">
 <style>
-  .partner-section { width: min(980px, 100%); margin: 3.5rem 0 4.25rem; }
-  .partner-section h2 { margin: 0 0 1.6rem; font-size: clamp(1.75rem, 1.25rem + 1.6vw, 2.75rem); font-weight: 600; line-height: 1.18; letter-spacing: -.03em; }
-  .partner-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 5vw, 5rem); }
-  .partner-card { border-top: 1px solid var(--line); padding-top: 1.5rem; }
-  .partner-card .partner-type { margin: 0 0 .65rem; font-size: .8125rem; font-weight: 600; line-height: 1.5; letter-spacing: .12em; text-transform: uppercase; }
-  .partner-card h3 { margin: 0 0 1rem; font-size: clamp(1.35rem, 1.15rem + .6vw, 1.7rem); font-weight: 600; line-height: 1.25; letter-spacing: -.025em; }
-  .partner-card p:last-child { margin: 0; max-width: 65ch; font-size: var(--type-body); line-height: 1.65; }
-  .partner-card strong { font-weight: 600; }
-  @media (max-width: 820px) {
-    .partner-section { margin: 2.75rem 0 3.5rem; }
-    .partner-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .partner-wall { width: min(1080px, 100%); margin: 3rem 0 4.5rem; }
+  .partner-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .partner-logo {
+    min-height: 150px;
+    margin: 0;
+    padding: 1.35rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(241, 241, 237, .28);
+    border: 1px solid rgba(23, 43, 146, .065);
+    transition: transform .2s ease, border-color .2s ease, background .2s ease;
+  }
+  .partner-logo:hover {
+    transform: translateY(-3px);
+    border-color: rgba(23, 43, 146, .14);
+    background: rgba(255, 255, 255, .28);
+  }
+  .partner-logo-image {
+    display: block;
+    width: 88%;
+    height: 72px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+
+  .partner-logo-image.logo-toall {
+    width: 72%;
+    height: 112px;
+  }
+  @media (max-width: 1050px) {
+    .partner-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  @media (max-width: 720px) {
+    .partner-wall { margin: 2.25rem 0 3.5rem; }
+    .partner-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+    .partner-logo { min-height: 125px; padding: 1rem .75rem; }
+  }
+  @media (max-width: 390px) {
+    .partner-grid { grid-template-columns: 1fr; }
+    .partner-logo { min-height: 112px; }
   }
 </style>
 </head>
@@ -680,37 +716,33 @@ footer {
   <nav class="page-nav" aria-label="Main programme pages">
     <a href="inbound.html">Inbound Programmes</a>
     <a href="outbound.html">Outbound Programmes</a>
+    <a href="partnerships.html" aria-current="page">Partnerships</a>
     <a href="gallery.html">Gallery</a>
   </nav>
   <p class="section-label">Partnerships</p>
-  <h1 class="page-title">From introductions to execution.</h1>
-  <p class="landing-intro">Commercial support for organisations that need more than a first meeting — from sourcing and market access to structured cross-border partnerships.</p>
-  <section class="partner-section" aria-labelledby="partner-heading">
-    <h2 id="partner-heading">Our partnerships</h2>
+  <h1 class="page-title">Our corporate partners.</h1>
+  <p class="landing-intro">A network spanning artificial intelligence, robotics, biotechnology, finance, payments and advanced manufacturing.</p>
+  <section class="partner-wall" aria-label="Corporate partner logos">
     <div class="partner-grid">
-      <article class="partner-card">
-        <p class="partner-type">Research affiliation</p>
-        <h3>Beijing FIRST Research Institute</h3>
-        <p>Through our affiliation with the <strong>Beijing Frontier Institute of Regulation and Supervision Technology (FIRST)</strong>, participants gain exposure to research and industry perspectives at the intersection of <strong>finance, technology, regulation, and innovation</strong>. FIRST brings together academic, industry, regulatory, and technology stakeholders, providing a valuable platform for understanding how emerging technologies are shaping financial systems and the wider digital economy.</p>
-      </article>
-      <article class="partner-card">
-        <p class="partner-type">Sales channel partnership</p>
-        <h3>Unitree Robotics</h3>
-        <p>Our <strong>sales channel partnership with Unitree Robotics</strong> strengthens our connection to China’s fast-growing robotics ecosystem. Through this collaboration, we support the market development and commercial outreach of Unitree’s robotics solutions, while providing our programmes with closer exposure to the business, application, and commercialisation of advanced robotics technologies.</p>
-      </article>
+      <figure class="partner-logo"><img class="partner-logo-image" src="images/partner-logos/brainco.png" alt="BrainCo logo"></figure>
+      <figure class="partner-logo"><img class="partner-logo-image" src="images/partner-logos/deep-robotics.png" alt="Deep Robotics logo"></figure>
+      <figure class="partner-logo"><img class="partner-logo-image" src="images/partner-logos/unitree.svg" alt="Unitree Robotics logo"></figure>
+      <figure class="partner-logo"><img class="partner-logo-image" src="images/partner-logos/yiwise.png" alt="Yiwise logo"></figure>
+      <figure class="partner-logo"><img class="partner-logo-image logo-toall" src="images/partner-logos/toall.png" alt="TOALL logo"></figure>
+      <figure class="partner-logo"><img class="partner-logo-image" src="images/partner-logos/jaka.png" alt="JAKA Robotics logo"></figure>
+      <figure class="partner-logo"><img class="partner-logo-image" src="images/partner-logos/alibaba.png" alt="Alibaba Group logo"></figure>
+      <figure class="partner-logo"><img class="partner-logo-image" src="images/partner-logos/ant-group.png" alt="Ant Group logo"></figure>
+      <figure class="partner-logo"><img class="partner-logo-image" src="images/partner-logos/lianlian-pay.png" alt="LianLian Pay logo"></figure>
+      <figure class="partner-logo"><img class="partner-logo-image" src="images/partner-logos/hyperchain.png" alt="Hyperchain logo"></figure>
+      <figure class="partner-logo"><img class="partner-logo-image" src="images/partner-logos/new-development-bank.svg" alt="New Development Bank logo"></figure>
+      <figure class="partner-logo"><img class="partner-logo-image" src="images/partner-logos/industrial-bank.png" alt="Industrial Bank logo"></figure>
+      <figure class="partner-logo"><img class="partner-logo-image" src="images/partner-logos/geely.svg" alt="Geely logo"></figure>
+      <figure class="partner-logo"><img class="partner-logo-image" src="images/partner-logos/hikvision.svg" alt="Hikvision logo"></figure>
+      <figure class="partner-logo"><img class="partner-logo-image" src="images/partner-logos/supcon.png" alt="SUPCON logo"></figure>
+      <figure class="partner-logo"><img class="partner-logo-image" src="images/partner-logos/iflytek.svg" alt="iFLYTEK logo"></figure>
+      <figure class="partner-logo"><img class="partner-logo-image" src="images/partner-logos/sansure.svg" alt="Sansure Biotech logo"></figure>
     </div>
   </section>
-  <div class="split">
-    <div class="split-card"><h3>Sourcing &amp; commercial partnerships</h3><p>Supplier discovery, QC visits, licensing and JV conversations, supported by bilingual coordination.</p></div>
-    <div class="split-card"><h3>Finance &amp; market access</h3><p>Cross-border payment, development-finance and institutional introductions where relevant to the mandate.</p></div>
-  </div>
-  <div class="subsection">
-    <h2>Built around the transaction, partnership or operating question.</h2>
-    <div class="split">
-      <div class="split-card"><h3>Before the meeting</h3><p>Target definition, counterpart research and bilingual preparation so conversations begin with context.</p></div>
-      <div class="split-card"><h3>After the meeting</h3><p>Follow-through on commercial questions, next steps and local coordination after the delegation ends.</p></div>
-    </div>
-  </div>
 </section>
 </main>
 <footer><span>© 2026 Nuts Tech</span><span>Connecting the world to China’s frontier</span></footer>
