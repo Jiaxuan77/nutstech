@@ -419,14 +419,6 @@ textarea::placeholder { color: rgba(23,43,146,.48); }
   line-height: 1.42;
   font-weight: 400;
 }
-.contact-bottom .contact-meta {
-  margin: 0 0 1.2rem;
-  color: var(--blue);
-  opacity: .78;
-}
-.contact-bottom .contact-meta span + span::before {
-  content: " · ";
-}
 .contact-bottom a {
   color: inherit;
   text-decoration: none;
@@ -509,7 +501,6 @@ footer {
   .submit-btn { font-size: .66rem; }
   .privacy-note { margin-top: .75rem; font-size: .68rem; }
   .contact-bottom { padding-top: 2.7rem; font-size: .7rem; }
-  .contact-bottom .contact-meta { margin-bottom: 1rem; }
   .contact-bottom .cities { margin-top: 1.45rem; }
   footer { padding-left: 2rem; padding-right: 2rem; flex-direction: column; }
 }
@@ -706,7 +697,7 @@ footer {
 
 </style>
 <link rel="stylesheet" href="typography.css">
-<link rel="stylesheet" href="site-header.css">
+<link rel="stylesheet" href="site-header.css?v=4">
 </head>
 <body>
 <div class="site-chrome">
@@ -719,10 +710,11 @@ footer {
   <nav class="page-nav" aria-label="Main programme pages">
     <a href="inbound.html">Inbound Programmes</a>
     <a href="outbound.html">Outbound Programmes</a>
+    <a href="partnerships.html">Partnerships</a>
     <a href="gallery.html">Gallery</a>
   </nav>
   <div class="contact-title-wrap">
-    <h1 class="page-title">Tell us your market and<br>what you want to achieve</h1>
+    <h1 class="page-title">Tell us your market<br>and<br>what you want to achieve</h1>
     <p class="contact-intro">Share the essentials and we’ll come back with the most relevant programme, delegation format or partnership route. We typically reply within 48 hours.</p>
   </div>
 
@@ -765,9 +757,7 @@ footer {
   </form>
 
   <div class="contact-bottom">
-    <p class="contact-meta"><span>Programme enquiries</span><span>Partnerships</span><span>Bespoke delegations</span></p>
     <a href="mailto:contact@nutstech.io">contact@nutstech.io</a><br>
-    <span>WeChat: nuts-tech</span>
     <p class="cities">Hangzhou · Shanghai · Beijing · Shenzhen</p>
   </div>
 </section>
