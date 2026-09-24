@@ -108,6 +108,14 @@ button, input, textarea, select { font: inherit; }
   max-width: 680px;
   font-size: clamp(2.55rem, 4.25vw, 4.45rem);
 }
+.programme-page-title {
+  width: max-content;
+  max-width: 100%;
+}
+.programme-page-title .title-line {
+  display: block;
+  white-space: nowrap;
+}
 .hero-copy {
   margin-top: 3.05rem;
   max-width: 800px;
@@ -438,6 +446,8 @@ footer {
   .section-label { letter-spacing: .19em; margin-top: 2.2rem; }
   .hero h1,
   .page-title { max-width: 95%; }
+  .programme-page-title { width: auto; }
+  .programme-page-title .title-line { white-space: normal; }
   .hero-copy { margin-top: 2.25rem; }
   .hero-nav,
   .page-nav { font-size: .98rem; padding-top: 2.8rem; gap: .62rem; }
@@ -653,7 +663,7 @@ footer {
 
 </style>
 <link rel="stylesheet" href="typography.css">
-<link rel="stylesheet" href="site-header.css">
+<link rel="stylesheet" href="site-header.css?v=4">
 <link rel="stylesheet" href="scroll-reveal.css">
 <script src="scroll-reveal.js" defer></script>
 </head>
@@ -668,10 +678,11 @@ footer {
   <nav class="page-nav" aria-label="Main programme pages">
     <a href="inbound.html">Inbound Programmes</a>
     <a href="outbound.html" aria-current="page">Outbound Programmes</a>
+    <a href="partnerships.html">Partnerships</a>
     <a href="gallery.html">Gallery</a>
   </nav>
   <p class="section-label">Outbound Programmes</p>
-  <h1 class="page-title">Explore new markets.<br>Build global connections.</h1>
+  <h1 class="page-title programme-page-title"><span class="title-line">Explore new markets.</span><span class="title-line">Build global connections.</span></h1>
   <p class="landing-intro">For leaders and organisations exploring opportunities beyond China. Meet companies, gain local insight and connect with potential partners through curated overseas visits and focused discussions.</p>
   <div class="programme-list">
     <article class="programme-row">
