@@ -44,11 +44,8 @@
 
 .site-chrome .top-link:hover { color: #0b65b1; }
 
-/* Keep the shared menu close to the header on every page. */
 .page,
-.home-page .hero {
-  padding-top: 1.25rem !important;
-}
+.home-page .hero { padding-top: 1.25rem !important; }
 
 .page-nav,
 .hero-nav {
@@ -67,9 +64,7 @@
 .page-nav a[aria-current="page"] { color: var(--accent); }
 
 .page-nav a,
-.hero-nav a {
-  padding-block: .12rem !important;
-}
+.hero-nav a { padding-block: .12rem !important; }
 
 @media (max-width: 900px) {
   .site-chrome {
@@ -85,6 +80,8 @@
   .site-chrome .logo img {
     width: 90px !important;
     height: 90px !important;
+    /* Compensate for the artwork's extra transparent space above. */
+    transform: translateY(-6px) !important;
   }
 
   .site-chrome .top-link { font-size: .82rem !important; }
@@ -97,9 +94,7 @@
   }
 
   .page,
-  .home-page .hero {
-    padding-top: .75rem !important;
-  }
+  .home-page .hero { padding-top: .75rem !important; }
 }
 
 @media (max-width: 360px) {
