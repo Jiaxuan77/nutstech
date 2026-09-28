@@ -95,6 +95,17 @@
 
   .page,
   .home-page .hero { padding-top: .75rem !important; }
+
+  footer {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: .4rem !important;
+    padding-inline: 1rem !important;
+    text-align: center !important;
+  }
+
+  footer span { width: 100%; }
 }
 
 @media (max-width: 360px) {
