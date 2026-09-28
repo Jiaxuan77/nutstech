@@ -3,6 +3,9 @@
   height: 144px !important;
   padding: 0 clamp(1.25rem, 4vw, 2.5rem) !important;
   gap: 2rem;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
 }
 
 .site-chrome .logo {
@@ -10,6 +13,9 @@
   height: 128px !important;
   overflow: visible;
   flex: none;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .site-chrome .logo img {
@@ -21,9 +27,12 @@
 
 .site-chrome .top-link {
   display: inline-flex !important;
-  align-items: center;
-  height: 100% !important;
-  margin-left: auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: auto !important;
+  margin: 0 0 0 auto !important;
+  padding: 0 !important;
+  line-height: 1 !important;
   color: var(--blue);
   font-size: .875rem !important;
   font-weight: 600;
