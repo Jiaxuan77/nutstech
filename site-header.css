@@ -6,15 +6,15 @@
 }
 
 .site-chrome .logo {
-  width: 104px;
-  height: 104px !important;
+  width: 128px;
+  height: 128px !important;
   overflow: visible;
   flex: none;
 }
 
 .site-chrome .logo img {
-  width: 104px !important;
-  height: 104px !important;
+  width: 128px !important;
+  height: 128px !important;
   object-fit: contain !important;
   transform: none;
 }
@@ -64,18 +64,18 @@
 
 @media (max-width: 900px) {
   .site-chrome {
-    height: 92px !important;
+    height: 104px !important;
     padding: 0 1.25rem 0 .8rem !important;
   }
 
   .site-chrome .logo {
-    width: 76px;
-    height: 76px !important;
+    width: 90px;
+    height: 90px !important;
   }
 
   .site-chrome .logo img {
-    width: 76px !important;
-    height: 76px !important;
+    width: 90px !important;
+    height: 90px !important;
   }
 
   .site-chrome .top-link { font-size: .82rem !important; }
