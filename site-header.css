@@ -113,6 +113,24 @@
   }
 }
 
+/* Wide screens: lift the menu up beside the page title, so the title on the
+   left and the menu on the right sit level and balance each other */
+@media (min-width: 1200px) {
+  .page,
+  .home-page .hero { position: relative; }
+  .page-nav,
+  .hero-nav {
+    position: absolute !important;
+    top: 2.6rem;
+    right: calc(var(--header-pad) - max(0px, (100vw - var(--page-max)) / 2));
+    width: auto !important;
+    margin: 0 !important;
+    z-index: 2;
+  }
+  .page > .section-label { margin-top: 2.6rem !important; }
+  .home-page .hero > h1 { margin-top: 2.6rem; }
+}
+
 @media (max-width: 900px) {
   .site-chrome {
     height: 104px !important;
