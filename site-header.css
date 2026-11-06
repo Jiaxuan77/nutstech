@@ -44,6 +44,24 @@
 
 .site-chrome .top-link:hover { color: #0b65b1; }
 
+/* "Book a call" button beside CONTACT */
+.site-chrome .top-cta {
+  /* the header already spaces items 2rem apart; pull the button in a bit */
+  margin-left: -.5rem !important;
+  padding: .7rem 1.05rem !important;
+  white-space: nowrap;
+  border: 1px solid var(--blue);
+  border-radius: 6px;
+  transition: color .18s ease, background .18s ease, border-color .18s ease;
+}
+.site-chrome .top-cta:hover,
+.site-chrome .top-cta[aria-current="page"] {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--ground);
+}
+.site-chrome .top-link[aria-current="page"]:not(.top-cta) { color: var(--accent); }
+
 .page,
 .home-page .hero { padding-top: 1.25rem !important; }
 
@@ -85,6 +103,7 @@
   }
 
   .site-chrome .top-link { font-size: .82rem !important; }
+  .site-chrome .top-cta { padding: .55rem .75rem !important; margin-left: -1rem !important; letter-spacing: .05em !important; }
 
   .page-nav,
   .hero-nav {
@@ -110,6 +129,7 @@
 }
 
 @media (max-width: 360px) {
+  .site-chrome .top-cta { padding: .5rem .6rem !important; margin-left: -1.25rem !important; font-size: .74rem !important; }
   .page-nav,
   .hero-nav {
     gap: .24rem !important;
