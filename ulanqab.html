@@ -661,7 +661,7 @@ footer {
 
 </style>
 <link rel="stylesheet" href="typography.css">
-<link rel="stylesheet" href="site-header.css?v=8">
+<link rel="stylesheet" href="site-header.css?v=9">
 <link rel="stylesheet" href="scroll-reveal.css">
 <script src="scroll-reveal.js" defer></script>
 <style>
@@ -866,7 +866,11 @@ footer {
     padding-left: max(var(--content-right), calc((100% - 980px) / 2)) !important;
     padding-right: max(var(--content-right), calc((100% - 980px) / 2)) !important;
   }
-  .programme-page .page-nav { width: min(980px, 100%); }
+  @media (min-width: 901px) {
+    .programme-page .page-nav {
+      margin-right: calc(var(--header-pad) - max(var(--content-right), (100vw - 980px) / 2)) !important;
+    }
+  }
   /* One divider between sections, not two */
   .industry-group:last-child { border-bottom: 0; padding-bottom: 0; }
   /* Region photo: a short strip after the figures, not a full hero */
