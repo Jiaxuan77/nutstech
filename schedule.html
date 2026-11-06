@@ -805,7 +805,7 @@ footer {
 
   <details class="schedule-fallback" id="schedule-fallback">
     <summary>Can’t see the calendar? Request a time instead</summary>
-    <p class="fallback-intro">Tell us two times that suit you and we’ll confirm one by email, typically within 48 hours.</p>
+    <p class="fallback-intro">Tell us two times that suit you and we’ll confirm one by email with a Zoom link, typically within 48 hours.</p>
   <form class="contact-form schedule-form" id="contact-form" name="schedule" method="POST" action="https://formsubmit.co/joyce.du@nutstech.io">
     <input type="hidden" name="_subject" value="New Nuts Tech call request">
     <input type="hidden" name="_template" value="table">
@@ -815,7 +815,7 @@ footer {
       <div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
       <div class="field"><label for="organisation">Organisation</label><input id="organisation" name="organisation" type="text" autocomplete="organization"></div>
 
-      <div class="field">
+      <div class="field full">
         <label for="topic">What would you like to discuss?</label>
         <select id="topic" name="topic">
           <option value="">Select one</option>
@@ -825,14 +825,6 @@ footer {
           <option>Partnership</option>
           <option>Bespoke delegation</option>
           <option>Other</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="call-format">Call format</label>
-        <select id="call-format" name="call-format">
-          <option>Video call</option>
-          <option>Phone call</option>
-          <option>WeChat call</option>
         </select>
       </div>
 
