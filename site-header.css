@@ -95,6 +95,24 @@
   }
 }
 
+/* Header corner: no divider, menu set in small caps to match CONTACT */
+.site-chrome { border-bottom: 0 !important; }
+.page-nav a,
+.hero-nav a {
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 600;
+}
+.page > .section-label { margin-top: 1.5rem !important; }
+@media (min-width: 901px) {
+  .page-nav,
+  .hero-nav {
+    font-size: .8125rem !important;
+    gap: .55rem !important;
+    margin-bottom: .75rem !important;
+  }
+}
+
 @media (max-width: 900px) {
   .site-chrome {
     height: 104px !important;
@@ -119,8 +137,9 @@
   .page-nav,
   .hero-nav {
     margin-bottom: 1.5rem !important;
-    gap: .28rem !important;
-    font-size: .72rem !important;
+    gap: .4rem !important;
+    font-size: .7rem !important;
+    letter-spacing: .06em;
   }
 
   .page,
