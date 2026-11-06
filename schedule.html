@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Book a call with Nuts Tech to talk through executive delegations, inbound and outbound programmes, or partnerships." />
+<meta name="description" content="Book a 30-minute call with Nuts Tech to talk through executive delegations, inbound and outbound programmes, or partnerships." />
 <title>Book a Call — Nuts Tech</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -722,6 +722,60 @@ footer {
   }
   .schedule-alt a { text-decoration: underline; text-underline-offset: 3px; }
   .schedule-alt a:hover { color: var(--accent); }
+  .cal-wrap {
+    position: relative;
+    width: min(980px, 100%);
+    margin: 3rem auto 0;
+  }
+  .cal-booker {
+    width: 100%;
+    min-height: 640px;
+    overflow: auto;
+  }
+  .cal-status {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    text-align: center;
+    font-size: var(--type-small);
+    opacity: .75;
+    pointer-events: none;
+  }
+  .cal-status[hidden] { display: none; }
+  .cal-wrap.is-failed .cal-booker { min-height: 0; }
+  .cal-wrap.is-failed .cal-status { position: static; padding: 1.5rem 0 0; opacity: 1; }
+  .schedule-fallback {
+    width: min(680px, 74vw);
+    margin: 2.5rem auto 0;
+    border-top: 1px solid var(--soft-line);
+  }
+  .schedule-fallback > summary {
+    padding: 1.25rem 0 0;
+    text-align: center;
+    font-size: var(--type-small);
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+  }
+  .schedule-fallback > summary::-webkit-details-marker { display: none; }
+  .schedule-fallback > summary::after { content: " +"; }
+  .schedule-fallback[open] > summary::after { content: " −"; }
+  .schedule-fallback > summary:hover { color: var(--accent); }
+  .schedule-fallback .contact-form { width: 100%; margin-top: 2rem; }
+  .fallback-intro {
+    margin: 1rem auto 0;
+    max-width: 52ch;
+    text-align: center;
+    font-size: var(--type-small);
+    opacity: .85;
+  }
+  @media (max-width: 820px) {
+    .cal-wrap { margin-top: 2rem; }
+    .schedule-fallback { width: 100%; }
+  }
 </style>
 </head>
 <body>
@@ -741,9 +795,17 @@ footer {
   </nav>
   <div class="contact-title-wrap">
     <h1 class="page-title">Book a call<br>with our team</h1>
-    <p class="contact-intro">Tell us two times that suit you and what you’d like to discuss. We’ll confirm one by email, typically within 48 hours.</p>
+    <p class="contact-intro">Pick a 30-minute slot that suits you. Your booking is confirmed straight away, and the Zoom link arrives by email.</p>
   </div>
 
+  <div class="cal-wrap">
+    <div id="cal-booker" class="cal-booker" aria-label="Booking calendar"></div>
+    <p class="cal-status" id="cal-status" role="status">Loading the calendar…</p>
+  </div>
+
+  <details class="schedule-fallback" id="schedule-fallback">
+    <summary>Can’t see the calendar? Request a time instead</summary>
+    <p class="fallback-intro">Tell us two times that suit you and we’ll confirm one by email, typically within 48 hours.</p>
   <form class="contact-form schedule-form" id="contact-form" name="schedule" method="POST" action="https://formsubmit.co/joyce.du@nutstech.io">
     <input type="hidden" name="_subject" value="New Nuts Tech call request">
     <input type="hidden" name="_template" value="table">
@@ -799,6 +861,7 @@ footer {
     <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
     <p class="privacy-note">We use the information you submit to arrange your call. See our <a href="privacy.html">full privacy notice</a>.</p>
   </form>
+  </details>
   <p class="schedule-alt">Prefer to write instead? <a href="contact.html">Send an enquiry</a>.</p>
 
   <div class="contact-bottom">
@@ -829,6 +892,36 @@ footer {
   const d = new Date();
   const today = new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
   document.querySelectorAll('input[type="date"]').forEach((el) => { el.min = today; });
+})();
+</script>
+<script>
+/* Cal.com inline booking calendar. If it doesn't load (e.g. a blocked network),
+   open the request form instead. */
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "nutstech30", { origin: "https://app.cal.com" });
+Cal.ns.nutstech30("inline", {
+  elementOrSelector: "#cal-booker",
+  calLink: "nutstech/30min",
+  config: { layout: "month_view", theme: "light" }
+});
+Cal.ns.nutstech30("ui", {
+  theme: "light",
+  layout: "month_view",
+  hideEventTypeDetails: false,
+  cssVarsPerTheme: { light: { "cal-brand": "#172b92" } }
+});
+(() => {
+  const wrap = document.querySelector('.cal-wrap');
+  const status = document.getElementById('cal-status');
+  const fallback = document.getElementById('schedule-fallback');
+  let ready = false;
+  Cal.ns.nutstech30("on", { action: "linkReady", callback: () => { ready = true; status.hidden = true; } });
+  setTimeout(() => {
+    if (ready) return;
+    wrap.classList.add('is-failed');
+    status.textContent = 'The calendar is taking a while to load. You can request a time below instead.';
+    if (fallback) fallback.open = true;
+  }, 12000);
 })();
 </script>
 </body>
